@@ -3,10 +3,10 @@ package Implementation;
 import Abstraction.Zustand;
 
 public class Rehabilitiert implements Zustand {
-    private Politiker politiker;
+    private Protegiert protegiert;
 
-    public Rehabilitiert(Politiker politiker) {
-        this.politiker = politiker;
+    public Rehabilitiert(Protegiert protegiert) {
+        this.protegiert = protegiert;
     }
 
     @Override
@@ -26,11 +26,11 @@ public class Rehabilitiert implements Zustand {
 
     @Override
     public void wirtschaftslob() {
-
+        this.protegiert.setUnterzustand(new Ergeben(this.protegiert));
     }
 
     @Override
     public void erwischst() {
-
+        this.protegiert.erwischst();
     }
 }

@@ -1,6 +1,7 @@
 package Implementation;
 
 import Abstraction.Zustand;
+import Model.Politiker;
 
 public class Ruhestand implements Zustand {
     private Politiker politiker;

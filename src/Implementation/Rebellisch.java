@@ -3,15 +3,15 @@ package Implementation;
 import Abstraction.Zustand;
 
 public class Rebellisch implements Zustand {
-    private PolitschAktiv politschAktiv;
+    private PolitischAktiv politischAktiv;
 
-    public Rebellisch(PolitschAktiv politschAktiv) {
-        this.politschAktiv = politschAktiv;
+    public Rebellisch(PolitischAktiv politischAktiv) {
+        this.politischAktiv = politischAktiv;
     }
 
     @Override
     public void parteilob() {
-
+        politischAktiv.setUnterZustandPartei(new Loyal(this.politischAktiv));
     }
 
     @Override
@@ -31,6 +31,6 @@ public class Rebellisch implements Zustand {
 
     @Override
     public void erwischst() {
-
+        this.politischAktiv.erwischst();
     }
 }

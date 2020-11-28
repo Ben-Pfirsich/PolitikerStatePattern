@@ -1,12 +1,13 @@
 package Implementation;
 
 import Abstraction.Zustand;
+import Model.Politiker;
 
 public class Hoerig implements Zustand {
-    private Politiker politiker;
+    private Protegiert protegiert;
 
-    public Hoerig(Politiker politiker) {
-        this.politiker = politiker;
+    public Hoerig(Protegiert protegiert) {
+        this.protegiert = protegiert;
     }
 
     @Override
@@ -26,11 +27,12 @@ public class Hoerig implements Zustand {
 
     @Override
     public void wirtschaftslob() {
-
+        Politiker politiker = this.protegiert.getPolitischAktiv().getPolitiker();
+        politiker.setAktuellerZustand(new Aufsichtsrat(politiker));
     }
 
     @Override
     public void erwischst() {
-
+        this.protegiert.erwischst();
     }
 }

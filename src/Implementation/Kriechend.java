@@ -3,20 +3,20 @@ package Implementation;
 import Abstraction.Zustand;
 
 public class Kriechend implements Zustand {
-    private PolitschAktiv politschAktiv;
+    private PolitischAktiv politischAktiv;
 
-    public Kriechend(PolitschAktiv politsch){
-        this.politschAktiv = politschAktiv;
+    public Kriechend(PolitischAktiv politischAktiv){
+        this.politischAktiv = politischAktiv;
     }
 
     @Override
     public void parteilob() {
-
+        this.politischAktiv.wirtschaftskritik();
     }
 
     @Override
     public void parteitadel() {
-
+        this.politischAktiv.setUnterZustandPartei(new Rebellisch(this.politischAktiv));
     }
 
     @Override
@@ -31,6 +31,6 @@ public class Kriechend implements Zustand {
 
     @Override
     public void erwischst() {
-
+        this.politischAktiv.erwischst();
     }
 }

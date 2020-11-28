@@ -1,6 +1,7 @@
 package Implementation;
 
 import Abstraction.Zustand;
+import Model.Politiker;
 
 public class Aufsichtsrat implements Zustand {
     private Politiker politiker;
@@ -31,6 +32,6 @@ public class Aufsichtsrat implements Zustand {
 
     @Override
     public void erwischst() {
-
+        this.politiker.setAktuellerZustand(new Ruhestand(this.politiker));
     }
 }

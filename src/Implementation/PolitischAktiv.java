@@ -1,16 +1,21 @@
 package Implementation;
 
 import Abstraction.Zustand;
+import Model.Politiker;
 
-public class PolitschAktiv implements Zustand {
+public class PolitischAktiv implements Zustand {
     private Politiker politiker;
     private Zustand unterZustandPartei;
     private Zustand unterZustandWirtschaft;
 
-    public PolitschAktiv(Politiker politiker) {
+    public PolitischAktiv(Politiker politiker) {
         this.politiker = politiker;
         setUnterZustandPartei(new Loyal(this));
         setUnterZustandWirtschaft(new Protegiert(this));
+    }
+
+    public Politiker getPolitiker() {
+        return politiker;
     }
 
     public Zustand getUnterZustandPartei() {
@@ -36,21 +41,21 @@ public class PolitschAktiv implements Zustand {
 
     @Override
     public void parteitadel() {
-
+        unterZustandPartei.parteitadel();
     }
 
     @Override
     public void wirtschaftskritik() {
-
+        unterZustandWirtschaft.wirtschaftskritik();
     }
 
     @Override
     public void wirtschaftslob() {
-
+        unterZustandWirtschaft.wirtschaftslob();
     }
 
     @Override
     public void erwischst() {
-
+        this.politiker.setAktuellerZustand(new Ruhestand(this.politiker));
     }
 }

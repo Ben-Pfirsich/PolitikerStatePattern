@@ -3,10 +3,20 @@ package Implementation;
 import Abstraction.Zustand;
 
 public class Protegiert implements Zustand {
-    private PolitschAktiv politschAktiv;
+    private PolitischAktiv politischAktiv;
+    private Zustand unterzustand;
 
-    public Protegiert(PolitschAktiv politschAktiv) {
-        this.politschAktiv = politschAktiv;
+    public Protegiert(PolitischAktiv politischAktiv) {
+        this.politischAktiv = politischAktiv;
+        this.unterzustand = new Ergeben(this);
+    }
+
+    public PolitischAktiv getPolitischAktiv() {
+        return politischAktiv;
+    }
+
+    public void setUnterzustand(Zustand unterzustand) {
+        this.unterzustand = unterzustand;
     }
 
     @Override
@@ -21,16 +31,16 @@ public class Protegiert implements Zustand {
 
     @Override
     public void wirtschaftskritik() {
-
+        this.politischAktiv.setUnterZustandWirtschaft(new Neutral(this.politischAktiv));
     }
 
     @Override
     public void wirtschaftslob() {
-
+        this.unterzustand.wirtschaftslob();
     }
 
     @Override
     public void erwischst() {
-
+        this.politischAktiv.erwischst();
     }
 }

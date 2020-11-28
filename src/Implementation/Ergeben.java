@@ -3,10 +3,10 @@ package Implementation;
 import Abstraction.Zustand;
 
 public class Ergeben implements Zustand {
-    private Politiker politiker;
+    private Protegiert protegiert;
 
-    public Ergeben(Politiker politiker) {
-        this.politiker = politiker;
+    public Ergeben(Protegiert protegiert) {
+        this.protegiert = protegiert;
     }
 
     @Override
@@ -26,11 +26,11 @@ public class Ergeben implements Zustand {
 
     @Override
     public void wirtschaftslob() {
-
+        this.protegiert.setUnterzustand(new Hoerig(this.protegiert));
     }
 
     @Override
     public void erwischst() {
-
+        this.protegiert.erwischst();
     }
 }
