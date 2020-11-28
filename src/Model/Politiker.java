@@ -1,13 +1,14 @@
 package Model;
 
 import Abstraction.Zustand;
+import Implementation.Aufsichtsrat;
 import Implementation.PolitischAktiv;
 
 public class Politiker {
     private Zustand aktuellerZustand;
 
     public boolean aktiv(){
-        return aktuellerZustand instanceof PolitischAktiv;
+        return aktuellerZustand instanceof PolitischAktiv || aktuellerZustand instanceof Aufsichtsrat;
     }
 
     public void parteilob(){
