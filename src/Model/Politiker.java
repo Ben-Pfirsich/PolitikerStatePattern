@@ -42,4 +42,8 @@ public class Politiker {
         this.aktuellerZustand = aktuellerZustand;
     }
 
+    @Override
+    public String toString() {
+        return "Politiker: {" + this.aktuellerZustand.toString() + "}";
+    }
 }
