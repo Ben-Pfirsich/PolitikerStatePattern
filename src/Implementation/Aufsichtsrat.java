@@ -34,4 +34,9 @@ public class Aufsichtsrat implements Zustand {
     public void erwischst() {
         this.politiker.setAktuellerZustand(new Ruhestand(this.politiker));
     }
+
+    @Override
+    public String toString() {
+        return "Aufsichtsrat";
+    }
 }

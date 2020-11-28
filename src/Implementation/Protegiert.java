@@ -43,4 +43,9 @@ public class Protegiert implements Zustand {
     public void erwischst() {
         this.politischAktiv.erwischst();
     }
+
+    @Override
+    public String toString() {
+        return "Protegiert, " + this.unterzustand.toString();
+    }
 }

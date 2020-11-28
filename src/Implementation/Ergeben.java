@@ -33,4 +33,9 @@ public class Ergeben implements Zustand {
     public void erwischst() {
         this.protegiert.erwischst();
     }
+
+    @Override
+    public String toString() {
+        return "Ergeben";
+    }
 }

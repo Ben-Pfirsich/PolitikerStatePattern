@@ -34,4 +34,9 @@ public class Ruhestand implements Zustand {
     public void erwischst() {
 
     }
+
+    @Override
+    public String toString() {
+        return "Ruhestand";
+    }
 }

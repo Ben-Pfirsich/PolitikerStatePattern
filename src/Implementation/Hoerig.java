@@ -35,4 +35,9 @@ public class Hoerig implements Zustand {
     public void erwischst() {
         this.protegiert.erwischst();
     }
+
+    @Override
+    public String toString() {
+        return "Hoerig";
+    }
 }

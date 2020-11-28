@@ -58,4 +58,9 @@ public class PolitischAktiv implements Zustand {
     public void erwischst() {
         this.politiker.setAktuellerZustand(new Ruhestand(this.politiker));
     }
+
+    @Override
+    public String toString() {
+        return "Politisch Aktiv, " + this.unterZustandPartei.toString()+ ", " + this.unterZustandWirtschaft.toString();
+    }
 }

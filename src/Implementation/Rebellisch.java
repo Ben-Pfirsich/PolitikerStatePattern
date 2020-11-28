@@ -33,4 +33,9 @@ public class Rebellisch implements Zustand {
     public void erwischst() {
         this.politischAktiv.erwischst();
     }
+
+    @Override
+    public String toString() {
+        return "Rebellisch";
+    }
 }
