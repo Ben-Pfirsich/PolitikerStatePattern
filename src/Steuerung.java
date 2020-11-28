@@ -29,7 +29,6 @@ public class Steuerung {
                 case 3 -> politiker.erwischt();
             }
             System.out.println(politiker.toString());
-            //hier muss noch eine sinnvolle Ausgabe implementiert werden
         }
 
     }
